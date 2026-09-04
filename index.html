@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibrant Vault LLC — U.S. Wholesale &amp; Product Distribution</title>
+<meta name="description" content="Vibrant Vault LLC is a Florida-based U.S. e-commerce and product distribution company sourcing quality products through wholesale, private label, and long-term supplier partnerships.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EE;
+    --ink:#1C2430;
+    --ink-soft:#4B5563;
+    --gold:#B3852F;
+    --teal:#2E6B5E;
+    --line:#DCD6C8;
+    --panel:#FFFFFF;
+    --max:1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    margin:0 0 0.5em 0;
+    color:var(--ink);
+  }
+  p{margin:0 0 1em 0; color:var(--ink-soft); max-width:64ch;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  img{max-width:100%; display:block;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,244,238,0.92);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px; max-width:var(--max); margin:0 auto;
+  }
+  .brand{
+    font-family:'Newsreader', serif; font-size:1.25rem; font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--gold);}
+  nav ul{list-style:none; display:flex; gap:26px; margin:0; padding:0;}
+  nav ul li a{
+    text-decoration:none; font-size:0.92rem; color:var(--ink);
+    padding-bottom:3px; border-bottom:1px solid transparent;
+    transition:border-color .2s ease;
+  }
+  nav ul li a:hover{border-color:var(--gold);}
+  .nav-toggle{display:none; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--ink);}
+
+  .hero{
+    padding:96px 0 84px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:end;}
+  .hero h1{font-size:clamp(2.2rem, 4vw, 3.4rem); line-height:1.12; max-width:14ch;}
+  .hero .lede{font-size:1.08rem; max-width:44ch;}
+  .hero .meta{
+    border-left:2px solid var(--gold);
+    padding-left:20px;
+  }
+  .hero .meta dl{margin:0;}
+  .hero .meta dt{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gold); margin-top:14px;}
+  .hero .meta dt:first-child{margin-top:0;}
+  .hero .meta dd{margin:2px 0 0 0; font-size:0.96rem; color:var(--ink);}
+  .btn{
+    display:inline-block; margin-top:20px;
+    background:var(--ink); color:var(--paper); text-decoration:none;
+    padding:13px 26px; font-size:0.95rem; border-radius:2px;
+    transition:background .2s ease;
+  }
+  .btn:hover{background:var(--teal);}
+  .btn-outline{
+    background:transparent; color:var(--ink); border:1px solid var(--ink);
+  }
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+
+  section{padding:76px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{max-width:56ch; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(1.6rem, 2.6vw, 2.1rem);}
+  .kicker{color:var(--teal); font-size:0.85rem; margin:0 0 10px 0;}
+
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .stat-row{display:flex; gap:40px; margin-top:28px;}
+  .stat-row div strong{display:block; font-family:'Newsreader', serif; font-size:1.7rem; font-weight:500;}
+  .stat-row div span{font-size:0.85rem; color:var(--ink-soft);}
+
+  .biz-list{
+    display:grid; grid-template-columns:repeat(2, 1fr); border-top:1px solid var(--line);
+  }
+  .biz-list div{
+    padding:20px 0; border-bottom:1px solid var(--line);
+    padding-right:24px;
+  }
+  .biz-list div:nth-child(odd){border-right:1px solid var(--line); padding-right:24px;}
+  .biz-list div:nth-child(even){padding-left:24px;}
+  .biz-list h3{font-size:1.02rem; margin-bottom:6px; font-family:'IBM Plex Sans',sans-serif; font-weight:600;}
+  .biz-list p{font-size:0.92rem; margin:0;}
+
+  .cat-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .cat-grid div{
+    background:var(--panel); padding:26px 20px; min-height:110px;
+    display:flex; align-items:flex-end;
+  }
+  .cat-grid div span{font-size:0.98rem; font-weight:500;}
+
+  .suppliers{background:var(--ink); color:var(--paper);}
+  .suppliers h2{color:var(--paper);}
+  .suppliers p{color:#C9CFD6;}
+  .suppliers .wrap{display:grid; grid-template-columns:1.2fr 1fr; gap:50px; align-items:center;}
+  .pref-list{list-style:none; margin:18px 0 0 0; padding:0; display:flex; flex-wrap:wrap; gap:10px;}
+  .pref-list li{
+    border:1px solid #3A4453; padding:7px 14px; font-size:0.85rem; border-radius:999px; color:#DCE1E6;
+  }
+  .suppliers .btn{background:var(--gold); color:var(--ink);}
+  .suppliers .btn:hover{background:#c99a45;}
+
+  .fulfill-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .fulfill-card{border-left:2px solid var(--teal); padding-left:22px;}
+  .fulfill-card h3{font-size:1.05rem; font-family:'IBM Plex Sans',sans-serif; font-weight:600; margin-bottom:8px;}
+
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px;}
+  .contact-details dt{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--gold); margin-top:20px;}
+  .contact-details dt:first-child{margin-top:0;}
+  .contact-details dd{margin:3px 0 0 0; font-size:0.98rem;}
+  form{display:flex; flex-direction:column; gap:14px;}
+  form label{font-size:0.85rem; color:var(--ink-soft);}
+  form input, form select, form textarea{
+    font-family:inherit; font-size:0.95rem; padding:11px 12px;
+    border:1px solid var(--line); background:var(--panel); border-radius:2px; color:var(--ink);
+  }
+  form textarea{min-height:110px; resize:vertical;}
+  form button{align-self:flex-start; border:none; cursor:pointer; font-family:inherit;}
+  .form-note{font-size:0.8rem; color:var(--ink-soft); margin-top:6px;}
+
+  footer{padding:34px 0; }
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.85rem; color:var(--ink-soft);}
+
+  @media (max-width: 860px){
+    nav ul{
+      position:fixed; top:64px; left:0; right:0; background:var(--paper);
+      flex-direction:column; padding:20px 28px; gap:16px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav ul.open{display:flex;}
+    .nav-toggle{display:block;}
+    .hero .wrap, .about-grid, .fulfill-grid, .contact-grid, .suppliers .wrap{grid-template-columns:1fr;}
+    .biz-list{grid-template-columns:1fr;}
+    .biz-list div:nth-child(odd){border-right:none;}
+    .biz-list div:nth-child(even){padding-left:0;}
+    .cat-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">Vibrant <span>Vault</span> LLC</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <ul id="navList">
+      <li><a href="#about">About</a></li>
+      <li><a href="#business">Our Business</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#suppliers">Suppliers</a></li>
+      <li><a href="#fulfillment">Fulfillment</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Sourcing quality products for the U.S. market.</h1>
+      <p class="lede">Vibrant Vault LLC is a Florida-based e-commerce and product distribution company built on wholesale sourcing, private label, and long-term relationships with brands, manufacturers, distributors, and wholesalers.</p>
+      <a href="#suppliers" class="btn">Partner with us</a>
+    </div>
+    <div class="meta">
+      <dl>
+        <dt>Entity</dt>
+        <dd>Vibrant Vault LLC</dd>
+        <dt>Established</dt>
+        <dd>2024 &middot; Florida, United States</dd>
+        <dt>Market</dt>
+        <dd>United States</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="kicker">About Vibrant Vault</p>
+        <h2>A purchasing partner built for the long term</h2>
+        <p>We are a U.S.-based e-commerce and product distribution company specializing in wholesale sourcing, online and retail arbitrage, private label, generic products, and e-commerce distribution. We work with brands, manufacturers, distributors, wholesalers, and other authorized supply partners to source quality products for customers across the United States.</p>
+      </div>
+      <div>
+        <p>Our approach is straightforward: reliable communication, consistent purchasing, and a focus on product quality. We operate across several e-commerce channels and product categories, which lets us build steady, repeatable volume with the supply partners we work with.</p>
+        <div class="stat-row">
+          <div><strong>2024</strong><span>Company established</span></div>
+          <div><strong>8</strong><span>Active product categories</span></div>
+          <div><strong>US</strong><span>Nationwide market coverage</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="business">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Our Business</p>
+      <h2>How we operate across the e-commerce supply chain</h2>
+    </div>
+    <div class="biz-list">
+      <div>
+        <h3>Amazon Wholesale</h3>
+        <p>Purchasing approved product lines in volume for resale through established marketplace channels.</p>
+      </div>
+      <div>
+        <h3>Online &amp; Retail Arbitrage</h3>
+        <p>Identifying quality products across online and retail channels for distribution to U.S. customers.</p>
+      </div>
+      <div>
+        <h3>Private Label</h3>
+        <p>Developing and distributing our own branded product lines within select categories.</p>
+      </div>
+      <div>
+        <h3>Generic Products</h3>
+        <p>Sourcing everyday consumer goods across multiple categories at consistent quality and value.</p>
+      </div>
+      <div>
+        <h3>E-commerce Distribution</h3>
+        <p>Moving sourced products efficiently through our e-commerce sales channels to reach U.S. shoppers.</p>
+      </div>
+      <div>
+        <h3>Wholesale Purchasing</h3>
+        <p>Building direct, recurring purchasing relationships with brands and distributors for long-term supply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Product Categories</p>
+      <h2>Where we focus our sourcing</h2>
+    </div>
+    <div class="cat-grid">
+      <div><span>Beauty &amp; Personal Care</span></div>
+      <div><span>Health &amp; Household</span></div>
+      <div><span>Home &amp; Kitchen</span></div>
+      <div><span>Toys &amp; Games</span></div>
+      <div><span>Office Products</span></div>
+      <div><span>Musical Instruments</span></div>
+      <div><span>Electronics</span></div>
+      <div><span>Other Consumer Products</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="suppliers" class="suppliers">
+  <div class="wrap">
+    <div>
+      <p class="kicker" style="color:#D8B36A;">Supplier Partnerships</p>
+      <h2>Looking for a reliable, long-term U.S. buyer</h2>
+      <p>We value reliable supply, professional communication, product quality, and long-term partnerships. We welcome opportunities to work with established brands, distributors, manufacturers, and wholesale suppliers serving the U.S. market.</p>
+      <ul class="pref-list">
+        <li>Brands</li>
+        <li>Manufacturers</li>
+        <li>Distributors</li>
+        <li>Wholesalers</li>
+        <li>Authorized supply partners</li>
+      </ul>
+    </div>
+    <div>
+      <a href="#contact" class="btn">Start a supplier conversation</a>
+    </div>
+  </div>
+</section>
+
+<section id="fulfillment">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Fulfillment &amp; Operations</p>
+      <h2>Built to move product reliably across the U.S.</h2>
+    </div>
+    <div class="fulfill-grid">
+      <div class="fulfill-card">
+        <h3>Fulfillment &amp; Shipping</h3>
+        <p>Vibrant Vault works with a third-party fulfillment location to receive, store, and ship products to customers throughout the United States, keeping delivery consistent as order volume grows.</p>
+      </div>
+      <div class="fulfill-card">
+        <h3>Quality-Focused Operations</h3>
+        <p>Every sourcing decision is made with product quality and customer experience in mind, supported by consistent purchasing and responsive supplier communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Contact Us</p>
+      <h2>Let's talk about working together</h2>
+    </div>
+    <div class="contact-grid">
+      <dl class="contact-details">
+        <dt>Business Address</dt>
+        <dd>7901 4th St N, Ste 21893<br>St. Petersburg, FL 33702<br>United States</dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:vibrantvaultllc@gmail.com">vibrantvaultllc@gmail.com</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+17274168219">+1 727-416-8219</a></dd>
+      </dl>
+      <form id="contactForm">
+        <div>
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="reason">I'm reaching out as a</label>
+          <select id="reason" name="reason">
+            <option>Supplier / Wholesaler</option>
+            <option>Manufacturer / Brand</option>
+            <option>Distributor</option>
+            <option>General inquiry</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+        <p class="form-note" id="formNote">This form connects to our automation workflow once a webhook URL is added in script.js.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2024–2026 Vibrant Vault LLC. All rights reserved.</span>
+    <span>St. Petersburg, Florida &middot; United States</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('navList').classList.toggle('open');
+  });
+
+  const WEBHOOK_URL = "";
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const note = document.getElementById('formNote');
+    if(!WEBHOOK_URL){
+      note.textContent = "Form captured (demo mode). Add your Make.com webhook URL in script to go live.";
+      return;
+    }
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    fetch(WEBHOOK_URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    }).then(() => {
+      note.textContent = "Thanks — your message has been sent.";
+      e.target.reset();
+    }).catch(() => {
+      note.textContent = "Something went wrong. Please email us directly.";
+    });
+  });
+</script>
+
+</body>
+</html>
